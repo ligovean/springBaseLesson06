@@ -17,7 +17,6 @@ import javax.sql.DataSource;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private DataSource myDataSource;
-
     @Autowired
     public void setMyDataSource(DataSource myDataSource) {
         this.myDataSource = myDataSource;
