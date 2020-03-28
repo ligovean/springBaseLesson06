@@ -33,9 +33,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .withUser(users.username("bob").password("{noop}123").roles("USER"));
 
 //
-        auth.inMemoryAuthentication()
-                .withUser(users.username("alex").password("{noop}123").roles("USER", "ADMIN"))
-                .withUser(users.username("bob").password("$2a$10$Ky8sAV0Zbj8RKJcCozhkZuR7S8pIT2Sif/1v42V26eTzx3lzhuQQO").roles("USER"));
+//        auth.inMemoryAuthentication()
+//                .withUser(users.username("user1").password("{noop}123").roles("USER", "ADMIN"))
+//                .withUser(users.username("user2").password("$2a$10$Ky8sAV0Zbj8RKJcCozhkZuR7S8pIT2Sif/1v42V26eTzx3lzhuQQO").roles("USER"));
     }
 
 

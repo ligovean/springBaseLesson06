@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -24,7 +24,15 @@
             <li class="nav-item" th:classappend="${activeTab == 'BooksList' ? 'active' : ''}">
                 <a class="nav-link" href="/books/list">Books List</a>
             </li>
+            <div sec:authorize="isAuthenticated()">
+                <li class="nav-item">
+                    <form th:action="@{/logout}" method="POST">
+                        <input type="submit" class="btn btn-danger" value="Logout"/>
+                    </form>
+                </li>
+            </div>
         </ul>
     </div>
+
 </nav>
 </html>

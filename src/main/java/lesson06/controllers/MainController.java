@@ -1,6 +1,5 @@
-package com.geekbrains.controllers;
+package lesson06.controllers;
 
-import com.geekbrains.repositories.StudentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
@@ -36,10 +35,10 @@ public class MainController {
 //        return "index";
 //    }
 //
-    @Secured({"ROLE_USER"})
+    @Secured({"ROLE_ADMIN"})
     @RequestMapping("/onlyYou")
     @ResponseBody
     public String onlyYou() {
-        return "index";
+        return "Только пользователь с ролью ADMIN может обратиться к этому методу!";
     }
 }

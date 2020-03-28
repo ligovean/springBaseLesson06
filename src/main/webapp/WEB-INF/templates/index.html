@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -22,6 +22,19 @@
 
 <div class="container">
     <h1>Привет page</h1>
+
+    <div sec:authorize="isAuthenticated()">
+        Authenticated username:
+        <div sec:authentication="principal.username"></div>
+        Authenticated user roles:
+        <div sec:authentication="principal.authorities"></div>
+    </div>
+
+    <!--Вариант авторизации на уровне View-->
+    <div sec:authorize="hasRole('ADMIN')">
+        Этот текст видно только пользователям с ролью ADMIN!.
+    </div>
+
     <h2>Index:</h2>
     <br>
     <a href="/books/list">Show books list</a>
